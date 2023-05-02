@@ -1,6 +1,6 @@
 import { get } from '@vercel/edge-config';
 
-export const runime = "edge"
+export const runtime = "edge"
 export const regions = [
   "cle1",
   "cpt1",
