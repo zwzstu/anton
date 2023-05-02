@@ -25,7 +25,7 @@ export async function POST(request: Request) {
   }
 
   let key: string = ""
-  const keys = await get("OPENAI_API_KEYS") as string[]
+  const keys = await get("keys") as string[]
   if (keys) {
     key = keys[Math.floor(Math.random() * keys.length)]
   }
