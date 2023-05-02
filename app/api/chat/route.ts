@@ -31,7 +31,10 @@ export async function POST(request: Request) {
   if (keys) {
     key = keys[Math.floor(Math.random() * keys.length)]
   }
-  const response = await fetch(process.env.NODE_ENV === "production" ? "" : "https://proxy.antonai.com/v1/chat/completions", {
+
+  const BASE_URL = process.env.NODE_ENV === "production" ? "https://api.openai.com" : "https://proxy.antonai.com"
+
+  const response = await fetch(`${BASE_URL}//v1/chat/completions`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
