@@ -1,22 +1,24 @@
 import { get } from '@vercel/edge-config';
 
 export const runtime = "edge"
-export const regions = [
-  "cle1",
-  "cpt1",
-  "dub1",
-  "fra1",
-  "gru1",
-  "hnd1",
-  "iad1",
-  "icn1",
-  "kix1",
-  "lhr1",
-  "pdx1",
-  "sfo1",
-  "sin1",
-  "syd1"
-]
+export const config = {
+  regions: [
+    "cle1",
+    "cpt1",
+    "dub1",
+    "fra1",
+    "gru1",
+    "hnd1",
+    "iad1",
+    "icn1",
+    "kix1",
+    "lhr1",
+    "pdx1",
+    "sfo1",
+    "sin1",
+    "syd1"
+  ]
+}
 
 export async function POST(request: Request) {
   const messages = await request.json()
