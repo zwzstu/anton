@@ -68,7 +68,7 @@ export default function Chat() {
             key={index}
           >
             <article
-              className="prose mx-auto"
+              className="prose mx-auto prose-pre:select-all"
               dangerouslySetInnerHTML={{ __html: marked(message.content) }}
             />
           </div>

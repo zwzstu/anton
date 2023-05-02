@@ -1,5 +1,3 @@
-import { get } from '@vercel/edge-config';
-
 export const runtime = "edge"
 export const config = {
   regions: [
@@ -27,7 +25,7 @@ export async function POST(request: Request) {
   }
 
   let key: string = ""
-  const keys = await get("keys") as string[]
+  const keys = process.env.keys?.split(",") as string[]
   if (keys) {
     key = keys[Math.floor(Math.random() * keys.length)]
   }
